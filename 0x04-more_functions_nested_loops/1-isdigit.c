@@ -1,7 +1,7 @@
 #include "main.h"
-#include <ctype.h>
+
 /**
- *  _isdigit - function name for digit
+ *  _isdigit - function to check for digit(0 through 9)
  *
  *  @c: the character to print
  *
