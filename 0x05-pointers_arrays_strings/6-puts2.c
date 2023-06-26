@@ -1,28 +1,19 @@
 #include "main.h"
+
 /**
- * puts_half - function name
- * @str: parameter
- * Return: 0
+ * puts2 - print one char out of 2 of a string
+ * @str: char array string type
+ * Description: Print 1st char, then 3rd, then 5th, etc..
  */
 
-void puts_half(char *str)
+void puts2(char *str)
 {
-	int first;
-	int second;
 	int i;
 
-	first = strlen(str);
-	if (first % 2 == 1)
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		second = first / 2 + 1;
+		if (i % 2 == 0)
+			_putchar(str[i]);
 	}
-	else
-	{
-		second = first / 2;
-	}
-	for (i = second; i < first; i++)
-	{
-		putchar(str[i]);
-	}
-	putchar('\n');
+	_putchar('\n');
 }
