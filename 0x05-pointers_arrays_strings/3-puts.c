@@ -1,16 +1,16 @@
 #include "main.h"
-#include <stdio.h>
 /**
- * _puts - function name
- * @str: parameter
+ * _puts -  print a string to stdout
+ * @str: char array string type
  * Return: 0
  */
 void _puts(char *str)
 {
-	while (*str > 0)
+	int i;
+
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		_putchar(*str);
-		str++;
+		_putchar(str[i]);
 	}
 	_putchar('\n');
 }
