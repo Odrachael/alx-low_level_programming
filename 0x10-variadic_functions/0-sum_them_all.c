@@ -9,7 +9,7 @@ int sum_them_all(const unsigned int n, ...);
 {
 
 	/* create va_list to store the variable arg */
-	va_list my_num;
+	va_list num;
 	unsigned int y;
 	int sum;
 	
@@ -17,10 +17,10 @@ int sum_them_all(const unsigned int n, ...);
 		return (0);
 	sum = 0;
 	
-	va_start(my_num, n);
+	va_start(num, n);
 	/* loop all arg stored in va_list */
 	for (y = 0; y < n; y++)
-		sum += va_arg(my_num, int);
-	va_end(my_nums);
+		sum += va_arg(num, int);
+	va_end(num);
 	return (sum);
 }
