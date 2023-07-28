@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
- * firstly - a function that prints some strings to stdout
- * Return: zero return
+ * first - a function that prints some strings to stdout
+ * Return: nothing
  */
 void __attribute__((constructor)) first()
 {
