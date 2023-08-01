@@ -11,9 +11,9 @@ size_t print_listint(const listint_t *h)
 
 	while (element_block != NULL)
 	{
-		printf("%d\n", element_block->n);
+		printf("%d\n", element_block.n);
 		num_of_element += 1;
-		element_block = element_block->next;
+		element_block = element_block.next;
 	}
 	return (num_of_element);
 }
