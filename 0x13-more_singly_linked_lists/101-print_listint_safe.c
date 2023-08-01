@@ -6,19 +6,19 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *node1 = head;
-	const listint_t *node2 = head;
-	size_t count = 0;
+        const listint_t *node1 = head;
+        const listint_t *node2 = head;
+        size_t count = 0;
 
-	while (node1 != NULL && node2 != NULL && j->next != NULL)
-	{
-		node1 = node1->next;
-		node2 = node2->next->next;
+        while (node1 != NULL && node2 != NULL && j->next != NULL)
+        {
+                node1 = node1->next;
+                node2 = node2->next->next;
 
-		if (node1 == node2)
-			exit(98);
+                if (node1 == node2)
+                        exit(98);
 
-		count++;
-	}
-	return count;
+                count++;
+        }
+        return count;
 }
