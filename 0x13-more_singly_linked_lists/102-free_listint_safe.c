@@ -6,22 +6,42 @@
  */
 size_t free_listint_safe(listint_t **h)
 {
-	listint_t *i = *h;
-	size_t count = 0;
+	size_t nnodes = 0;
+	listp_t *hptr, *new, *add;
+	listint_t *curr;
 
-	while (i != NULL)
+	hptr = NULL;
+	while (*h != NULL)
 	{
-		listint_t *j = i->next;
+		new = malloc(sizeof(listp_t));
 
-		free(i);
-		count++;
+		if (new == NULL)
+			exit(98);
 
-		if (j == *h)
+		new->p = (void *)*h;
+		new->next = hptr;
+		hptr = new;
+
+		add = hptr;
+
+		while (add->next != NULL)
 		{
-			*h = NULL;
-			break;
+			add = add->next;
+			if (*h == add->p)
+			{
+				*h = NULL;
+				free_listp2(&hptr);
+				return (nnodes);
+			}
 		}
-		i = j;
+
+		curr = *h;
+		*h = (*h)->next;
+		free(curr);
+		nnodes++;
 	}
-	return (count);
+
+	*h = NULL;
+	free_listp2(&hptr);
+	return (nnodes);
 }
